@@ -2,6 +2,7 @@
 import {useEffect,useState} from 'react';
 import {useRouter} from 'next/navigation';
 import {MotionConfig,motion} from 'framer-motion';
+import Player from './Player';
 
 const pad=(n:number)=>String(n).padStart(2,'0');
 
@@ -27,5 +28,5 @@ export default function Locked({targetISO,timezone,label,title,subtitle}:{target
       {now===null?null:(<div><p className='mb-2 text-xs uppercase tracking-widest text-burgundy/80'>Counting down to {dateLabel}</p><div className='grid grid-cols-4 gap-2'>{units.map(([l,v])=>(<div key={l} className='w-[70px] rounded-sm border border-blush bg-cream py-2'><div className='font-serif text-3xl text-burgundy'>{pad(v)}</div><div className='text-[10px] uppercase tracking-wider text-ink/80'>{l}</div></div>))}</div></div>)}
     </div>
     <p className='mt-6 font-hand text-xl text-burgundy/80'>Your little world opens when the countdown ends</p>
-  </main></MotionConfig>);
+  </main><Player/></MotionConfig>);
 }
