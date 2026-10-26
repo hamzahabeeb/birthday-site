@@ -133,7 +133,6 @@ export default function Site(){
     <Modal open={letter!==null} onClose={()=>setLetter(null)} label='Letter'>{letter!==null&&(<article className='p-6 pt-16'>
       <h3 className='mb-4 font-hand text-3xl text-burgundy'>{letters[letter].title}</h3>
       <Typed text={letters[letter].body}/>
-      <p className='mt-4 text-xs text-burgundy/70'>{config.sampleNote}</p>
     </article>)}</Modal>
 
     <section className='mx-auto max-w-3xl px-5 py-20'>

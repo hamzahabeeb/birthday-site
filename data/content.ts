@@ -7,7 +7,6 @@ export const config={
   hero:{label:'A little something made just for you',title:'Happy Birthday, My Love',subtitle:'If I could give you one thing, it would be the ability to see yourself through my eyes.',button:'Open your little world'},
   celebration:{title:'It’s your day!',text:'Happy Birthday, my love. Today is all about you.'},
   music:{src:'/music/song.mp3',title:'Arz Kiya Hai'},
-  sampleNote:'Sample text: replace with your own words in data/content.ts',
   memoriesTitle:'Our memories',
   lettersTitle:'Love letters',
   reasonsTitle:'A hundred little reasons',
@@ -27,10 +26,10 @@ export const photos=[
 
 // Separate paragraphs with | in body.
 export const letters=[
-  {id:'birthday',title:'A letter for your birthday',body:'Happy Birthday, my love.|This is sample text. Replace every word with your own. Tell her what this year meant to you, and what you hope the next one holds.|I’m so grateful for you.'},
-  {id:'miss',title:'When you miss me',body:'Sample text: replace me.|If you’re reading this, I’m probably not there right now, but I’m thinking of you. Close your eyes, take a breath, and know I’m on your side.'},
-  {id:'say',title:'Things I don’t say enough',body:'Sample text: replace me.|Thank you for being you. I see how hard you try, and I’m proud of you. I love you more than I say out loud.'},
-  {id:'promise',title:'A little promise to you',body:'Sample text: replace me.|I promise to keep choosing you, to keep listening, and to keep making space for us to laugh.'},
+  {id:'birthday',title:'A letter for your birthday',body:'Happy Birthday, my love.|Another year around the sun, and somehow I get to be standing next to you for it. I hope you know how much you are celebrated today, not just by me, but by everyone lucky enough to know you.|This year I watched you keep going, keep caring and keep being yourself, even on the days that asked a lot of you. I’m proud of you in ways I don’t always manage to say.|My wish for you this year is simple: more laughter than worry, more rest than rush, and more moments where you feel exactly how loved you are.|I’m so grateful for you. Today, and every day.'},
+  {id:'miss',title:'When you miss me',body:'Hey, you.|If you’re reading this, I’m probably not beside you right now, but I promise you’re on my mind. You usually are.|Close your eyes for a second and take a slow breath. Remember the garden, the laughing, your hand in mine. Those moments don’t go anywhere. Neither do I.|Whatever kind of day it is, I’m on your side. Hold on to that, and I’ll see you soon.'},
+  {id:'say',title:'Things I don’t say enough',body:'There are things I feel every day and forget to say out loud, so here they are.|Thank you for being patient with me. Thank you for the little ways you take care of me that you never make a fuss about.|I see how hard you try, even when nobody is clapping. I’m proud of you, and I’m on your team, always.|And I love you. More than I say, more than I show, and more than these few lines can hold.'},
+  {id:'promise',title:'A little promise to you',body:'I can’t promise a life without bad days, but I can promise you this.|I promise to keep choosing you, on the easy days and the hard ones. I promise to listen, really listen, and to say sorry quickly when I get it wrong.|I promise to keep making space for us to laugh, to be silly, and to slow down together.|Whatever comes next, I want to meet it with you. That’s my promise, and I mean every word.'},
 ];
 
 // Add as many as you like, one string each. They’re numbered automatically.
@@ -50,8 +49,8 @@ export const reasons=[
 ];
 
 export const surprises={
-  envelope:{label:'A sealed envelope. Tap to open.',message:'Sample text: replace me. You found a little secret: I love you, today and always.'},
-  heart:{label:'Tap the heart',message:'Sample text: replace me. This heart has always been yours.'},
-  last:{button:'One last thing...',title:'For you, with love',body:'Sample text: replace me with your final birthday letter.|Happy Birthday, my love. Thank you for every moment, and for being exactly who you are.',signature:'Yours, always'},
+  envelope:{label:'A sealed envelope. Tap to open.',message:'You found a little secret: I love you, today and always. Even when I’m quiet, even when I’m busy, even when I’m far away. Always.'},
+  heart:{label:'Tap the heart',message:'This heart has always been yours. It still skips a little whenever you walk in.'},
+  last:{button:'One last thing...',title:'For you, with love',body:'My love,|If you’ve made it this far, you’ve seen a few of the little things I wanted you to have. But none of it comes close to what I really want to say.|Thank you for every ordinary moment that you made feel special. Thank you for the laughs, the patience, and the way you make me feel at home.|Happy Birthday, my love. Thank you for every moment, and for being exactly who you are.',signature:'Yours, always'},
   door:{prompt:'One more thing...',button:'Click for a surprise',title:'Open the door of the flat',body:'Go to the front door of the flat, and open it.|Someone is standing outside, waiting for you.',signature:'See you in a second ❤️'},
 };
