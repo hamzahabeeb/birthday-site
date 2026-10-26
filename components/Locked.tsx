@@ -19,7 +19,7 @@ export default function Locked({targetISO,timezone,label,title,subtitle}:{target
     {Array.from({length:10},(_,i)=>(<span key={i} aria-hidden='true' className='petal' style={{left:(i*10+3)+'%',animationDuration:(9+(i%4)*3)+'s',animationDelay:(i*-1.7)+'s'}}/>))}
     <p className='font-hand text-2xl text-burgundy/80'>{label}</p>
     <motion.div aria-hidden='true' className='my-5' animate={{y:[0,-8,0]}} transition={{duration:4,repeat:Infinity}}>
-      <svg width='96' height='72' viewBox='0 0 96 72' fill='none'><rect x='2' y='6' width='92' height='64' rx='4' fill='#F4EADB' stroke='#B76E79'/><path d='M2 10l46 34 46-34' stroke='#B76E79'/><path d='M48 38s-9-5.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.500-9 11-9 11z' fill='#6E2233'/></svg>
+      <svg width='96' height='72' viewBox='0 0 96 72' fill='none'><rect x='2' y='6' width='92' height='64' rx='4' fill='#DCEAF7' stroke='#5B8FC7'/><path d='M2 10l46 34 46-34' stroke='#5B8FC7'/><path d='M48 38s-9-5.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.500-9 11-9 11z' fill='#1F4E8C'/></svg>
     </motion.div>
     <h1 className='font-serif text-5xl leading-tight text-burgundy sm:text-7xl'>{title}</h1>
     <p className='mt-4 max-w-md font-serif text-xl italic text-ink'>{subtitle}</p>

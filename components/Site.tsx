@@ -76,6 +76,25 @@ function Player(){
   </div>);
 }
 
+function Cat({className}:{className?:string}){
+  return (<svg className={className} viewBox='0 0 120 120' fill='none' aria-hidden='true'><path d='M24 52L22 18l26 16a46 46 0 0 1 24 0l26-16-2 34c4 8 4 16 0 24-6 14-22 22-36 22s-30-8-36-22c-4-8-4-16 0-24z' fill='#DCEAF7' stroke='#1F4E8C' strokeWidth='3' strokeLinejoin='round'/><ellipse cx='44' cy='64' rx='4' ry='5.5' fill='#1F4E8C'/><ellipse cx='76' cy='64' rx='4' ry='5.5' fill='#1F4E8C'/><path d='M56 76h8l-4 5z' fill='#5B8FC7'/><path d='M60 81c-2 5-8 5-10 2M60 81c2 5 8 5 10 2' stroke='#1F4E8C' strokeWidth='2.5' strokeLinecap='round'/><path d='M34 76l-14-3M34 82l-14 4M86 76l14-3M86 82l14 4' stroke='#1F4E8C' strokeWidth='2' strokeLinecap='round'/></svg>);
+}
+function Dog({className}:{className?:string}){
+  return (<svg className={className} viewBox='0 0 120 120' fill='none' aria-hidden='true'><path d='M30 40c-14-4-20 8-18 26 1 10 8 12 14 6' fill='#BFD9F2' stroke='#1F4E8C' strokeWidth='3' strokeLinejoin='round'/><path d='M90 40c14-4 20 8 18 26-1 10-8 12-14 6' fill='#BFD9F2' stroke='#1F4E8C' strokeWidth='3' strokeLinejoin='round'/><path d='M60 22c-22 0-32 14-32 34 0 24 14 42 32 42s32-18 32-42c0-20-10-34-32-34z' fill='#DCEAF7' stroke='#1F4E8C' strokeWidth='3'/><ellipse cx='46' cy='56' rx='4' ry='5.5' fill='#1F4E8C'/><ellipse cx='74' cy='56' rx='4' ry='5.5' fill='#1F4E8C'/><ellipse cx='60' cy='74' rx='13' ry='10' fill='#fff' stroke='#1F4E8C' strokeWidth='2.5'/><ellipse cx='60' cy='69' rx='5' ry='3.5' fill='#1F4E8C'/><path d='M60 72v5M60 77c-2 3-6 3-8 1M60 77c2 3 6 3 8 1' stroke='#1F4E8C' strokeWidth='2.5' strokeLinecap='round'/></svg>);
+}
+function Pets(){
+  const [hi,setHi]=useState<'cat'|'dog'|null>(null);
+  const say={cat:'Meow. (Translation: you are the best human.)',dog:'Woof! (Translation: happy birthday, best friend!)'};
+  return (<section className='mx-auto max-w-3xl px-5 py-16 text-center'>
+    <Head k='Just for you'>{config.petsTitle}</Head>
+    <p className='mx-auto mb-8 max-w-md font-serif text-lg italic text-ink'>{config.petsNote}</p>
+    <div className='flex items-end justify-center gap-8'>
+      {(['cat','dog'] as const).map(k=>(<motion.button key={k} whileTap={{scale:0.92,rotate:k==='cat'?-6:6}} whileHover={{y:-6}} onClick={()=>setHi(hi===k?null:k)} aria-label={'Say hello to the '+k} aria-pressed={hi===k} className='rounded-full bg-cream p-3 shadow-md'>{k==='cat'?<Cat className='h-28 w-28'/>:<Dog className='h-28 w-28'/>}</motion.button>))}
+    </div>
+    <p className='mt-5 min-h-[2rem] font-hand text-2xl text-burgundy' aria-live='polite'>{hi?say[hi]:'🐾 🐾 🐾'}</p>
+  </section>);
+}
+
 export default function Site(){
   const [photo,setPhoto]=useState<number|null>(null);
   const [letter,setLetter]=useState<number|null>(null);
@@ -100,7 +119,7 @@ export default function Site(){
       {Array.from({length:10},(_,i)=>(<span key={i} aria-hidden='true' className='petal' style={{left:(i*10+3)+'%',animationDuration:(9+(i%4)*3)+'s',animationDelay:(i*-1.7)+'s'}}/>))}
       <p className='font-hand text-2xl text-burgundy/80'>{config.hero.label}</p>
       <motion.div aria-hidden='true' className='my-5' animate={{y:[0,-8,0]}} transition={{duration:4,repeat:Infinity}}>
-        <svg width='96' height='72' viewBox='0 0 96 72' fill='none'><rect x='2' y='6' width='92' height='64' rx='4' fill='#F4EADB' stroke='#B76E79'/><path d='M2 10l46 34 46-34' stroke='#B76E79'/><path d='M48 38s-9-5.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.500-9 11-9 11z' fill='#6E2233'/></svg>
+        <svg width='96' height='72' viewBox='0 0 96 72' fill='none'><rect x='2' y='6' width='92' height='64' rx='4' fill='#DCEAF7' stroke='#5B8FC7'/><path d='M2 10l46 34 46-34' stroke='#5B8FC7'/><path d='M48 38s-9-5.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.500-9 11-9 11z' fill='#1F4E8C'/></svg>
       </motion.div>
       <h1 className='font-serif text-5xl leading-tight text-burgundy sm:text-7xl'>{config.hero.title}</h1>
       <p className='mt-4 max-w-md font-serif text-xl italic text-ink'>{config.hero.subtitle}</p>
@@ -140,6 +159,8 @@ export default function Site(){
       <ol className='grid gap-3 sm:grid-cols-2'>{reasons.slice(0,shown).map((r,i)=>(<motion.li key={i} initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} className={slip}><span className='font-hand text-xl text-burgundy'>No. {i+1}</span><p className='font-serif text-lg'>{r}</p></motion.li>))}</ol>
       {shown<reasons.length?(<div className='mt-6 flex justify-center gap-3'><button className='rounded-full bg-burgundy px-6 py-3 text-ivory' onClick={()=>setShown(s=>Math.min(reasons.length,s+1))}>Reveal another</button><button className='rounded-full bg-cream px-6 py-3 text-burgundy' onClick={()=>setShown(reasons.length)}>Show all</button></div>):null}
     </section>
+
+    <Pets/>
 
     <section className='mx-auto max-w-3xl px-5 py-16 text-center'>
       <Head k='Little secrets'>Hidden surprises</Head>

@@ -9,6 +9,8 @@ export const config={
   music:{src:'/music/song.mp3',title:'Arz Kiya Hai'},
   memoriesTitle:'Our memories',
   lettersTitle:'Love letters',
+  petsTitle:'Her favourite little creatures',
+  petsNote:'Dogs and cats, always. If I could, I’d fill every room with them, just for you. Tap one to say hello.',
   reasonsTitle:'A hundred little reasons',
   final:{message:'Of all the things life could have given me, I’m so glad it gave me you.',wish:'Happy Birthday, my favourite person. Here’s to more memories, more laughter, and more of us.',signature:'Made with all my love ❤️'},
 };
