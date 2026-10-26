@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{scroll-behavior:smooth;background:#FBF6EE}
+body{font-family:var(--font-sans),system-ui,sans-serif;color:#3A2A2C;background:#FBF6EE;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:80;opacity:.07;background-image:url('data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27120%27 height=%27120%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%27.8%27 numOctaves=%272%27/%3E%3C/filter%3E%3Crect width=%27120%27 height=%27120%27 filter=%27url(%2523n)%27/%3E%3C/svg%3E')}
+.petal{position:absolute;top:-10%;width:10px;height:14px;border-radius:70% 0 70% 0;background:#F3D5D3;opacity:.75;animation:fall linear infinite}
+@keyframes fall{to{transform:translate3d(40px,115vh,0) rotate(360deg)}}
+:focus-visible{outline:2px solid #6E2233;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.petal{animation:none;display:none}html{scroll-behavior:auto}}
